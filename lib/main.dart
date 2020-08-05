@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/login_screen.dart';
 import 'package:chat_app/screens/registration_screen.dart';
 import 'package:chat_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,10 @@ class ChatApp extends StatelessWidget {
       ),
       home: WelcomeScreen(),
       initialRoute: '/',
-      routes: {},
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegistrationScreen(),
+      },
     );
   }
 }
