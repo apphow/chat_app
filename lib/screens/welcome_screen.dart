@@ -24,10 +24,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  child: Image.asset(
-                      'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
-                  height: 80.0,
+                Hero(
+                  tag: 'harli',
+                  child: Container(
+                    child: Image.asset(
+                        'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
+                    height: 80.0,
+                  ),
                 ),
                 SizedBox(
                   width: 10.0,

@@ -24,7 +24,7 @@ class _ChatScreenState extends State<ChatScreen> {
               }),
         ],
         title: Text('️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.red[300],
       ),
       body: SafeArea(
         child: Column(
