@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, 'chat');
                   },
                   minWidth: 200.0,
                   height: 42.0,

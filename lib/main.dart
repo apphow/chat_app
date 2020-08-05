@@ -16,12 +16,12 @@ class ChatApp extends StatelessWidget {
         ),
       ),
       home: WelcomeScreen(),
-      initialRoute: '/',
+      initialRoute: '/welcome',
       routes: {
         '/welcome': (context) => WelcomeScreen(),
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegistrationScreen(),
-        '/chat': (context) => ChatScreen(),
+        'chat': (context) => ChatScreen(),
       },
     );
   }
