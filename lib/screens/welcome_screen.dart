@@ -9,7 +9,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.yellow[200],
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -21,7 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Container(
                   child: Image.asset(
                       'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
-                  height: 60.0,
+                  height: 80.0,
                 ),
                 Text(
                   'Chatting',
