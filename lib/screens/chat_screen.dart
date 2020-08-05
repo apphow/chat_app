@@ -1,8 +1,11 @@
+import 'package:chat_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
 class ChatScreen extends StatefulWidget {
+  String id = 'chat_screen';
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -17,10 +20,10 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
-                //Implement logout functionality
+                Navigator.pushNamed(context, WelcomeScreen().id);
               }),
         ],
-        title: Text('⚡️Chat'),
+        title: Text('️Chat'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
