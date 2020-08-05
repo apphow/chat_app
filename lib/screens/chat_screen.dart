@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ChatScreen extends StatefulWidget {
-  String id = 'chat_screen';
+  static const String id = 'chat_screen';
 
   @override
   _ChatScreenState createState() => _ChatScreenState();
@@ -20,7 +20,7 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
-                Navigator.pushNamed(context, WelcomeScreen().id);
+                Navigator.pushNamed(context, WelcomeScreen.id);
               }),
         ],
         title: Text('️Chat'),
