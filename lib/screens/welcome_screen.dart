@@ -1,4 +1,5 @@
 import 'package:chat_app/screens/registration_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'login_screen.dart';
@@ -10,81 +11,124 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+//able to act as a ticker for a single animation
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  // controls actions of the animation
+  // variable of type AnimationController
+  AnimationController controller;
+  Animation animation;
+
+  //we want to initialize it when our state object gets
+  //initialized (initState method gets called when _WelcomeScreenState()
+  //gets created
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(
+        duration: Duration(seconds: 1),
+
+        // TicketProvider is our WelcomeScreenState object
+        vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+
+    //our controller will animate ahead in 60 steps (ticks)(
+    controller.forward();
+
+    // to see what the controller is doing, we need
+    // to add a listener to it. Listener takes a callback
+    controller.addListener(() {
+      setState(() {});
+      print(animation.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
+      resizeToAvoidBottomPadding: false,
+      backgroundColor: Colors.red.withOpacity(.2),
+      appBar: AppBar(
+        backgroundColor: Colors.red[300],
+        title: Text(
+          'Friends',
+          style: TextStyle(
+            color: Colors.red[900],
+          ),
+        ),
+      ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Hero(
-                  tag: 'harli',
-                  child: Container(
-                    child: Image.asset(
-                        'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
-                    height: 80.0,
-                  ),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  'Chatting :)',
-                  style: TextStyle(
-                    color: Colors.red[300],
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.red[300],
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+                height: 100,
+                child: Center(
                   child: Text(
-                    'Log In',
+                    '️Chatting',
+                    style: TextStyle(fontSize: 38.0, color: Colors.red[300]),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.red[300],
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
+              SizedBox(
+                height: 45.0,
+              ),
+              Hero(
+                tag: 'harli',
+                child: Container(
+                  child: Image.asset(
+                      'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
+                  height: animation.value * 300,
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Material(
+                  elevation: 5.0,
+                  color: Colors.red[300],
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: MaterialButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, LoginScreen.id);
+                    },
+                    minWidth: 200.0,
+                    height: 42.0,
+                    child: Text(
+                      'Log In',
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Material(
+                  color: Colors.red[300],
+                  borderRadius: BorderRadius.circular(30.0),
+                  elevation: 5.0,
+                  child: MaterialButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegistrationScreen.id);
+                    },
+                    minWidth: 200.0,
+                    height: 42.0,
+                    child: Text(
+                      'Register',
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

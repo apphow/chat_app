@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
+      backgroundColor: Colors.red.withOpacity(.2),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.white38,
+                color: Color(0xFFE57373),
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'Log In',
                     style: TextStyle(
-                        color: Colors.red[200],
+                        color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
