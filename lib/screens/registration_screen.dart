@@ -83,7 +83,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
-                  color: Colors.white38,
+                  color: Color(0xFFE57373),
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(
@@ -95,7 +95,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: Text(
                       'Register',
                       style: TextStyle(
-                          color: Colors.red[200],
+                          color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
