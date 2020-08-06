@@ -27,20 +27,28 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     super.initState();
 
     controller = AnimationController(
-        duration: Duration(seconds: 1),
+      duration: Duration(seconds: 1),
 
-        // TicketProvider is our WelcomeScreenState object
-        vsync: this);
-    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+      // TicketProvider is our WelcomeScreenState object
+      vsync: this,
+    );
 
+    //animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    animation =
+        ColorTween(begin: Colors.orange[100], end: Colors.red.withOpacity(.2))
+            .animate(controller);
     //our controller will animate ahead in 60 steps (ticks)(
     controller.forward();
+
+    animation.addStatusListener((status) {
+      print(status);
+    });
 
     // to see what the controller is doing, we need
     // to add a listener to it. Listener takes a callback
     controller.addListener(() {
       setState(() {});
-      print(animation.value);
     });
   }
 
@@ -48,11 +56,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Colors.red.withOpacity(.2),
+      backgroundColor: animation.value,
       appBar: AppBar(
         backgroundColor: Colors.red[300],
         title: Text(
-          'Friends',
+          'Family',
           style: TextStyle(
             color: Colors.red[900],
           ),
@@ -66,10 +74,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               SizedBox(
-                height: 30.0,
+                height: 50.0,
               ),
               Container(
-                height: 100,
+                height: 60,
                 child: Center(
                   child: Text(
                     '️Chatting',
@@ -85,7 +93,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 child: Container(
                   child: Image.asset(
                       'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
-                  height: animation.value * 300,
+                  height: 300,
                 ),
               ),
               SizedBox(
