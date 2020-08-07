@@ -60,6 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       resizeToAvoidBottomPadding: false,
       backgroundColor: animation.value,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.red[300],
         title: Text(
           'Family',
