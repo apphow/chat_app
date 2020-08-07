@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "97842971033",
+    "firebase_url": "https://family-chat-71f99.firebaseio.com",
+    "project_id": "family-chat-71f99",
+    "storage_bucket": "family-chat-71f99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97842971033:android:5139d28ea5f3c048181308",
+        "android_client_info": {
+          "package_name": "com.AprilHoward.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97842971033-f27tdhk7f5sarnia5klnjdieai78b0h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIh9VzYSDgLbUOEEab2VJd148xsMitnbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97842971033-f27tdhk7f5sarnia5klnjdieai78b0h6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

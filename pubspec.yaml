@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   animated_text_kit: ^2.2.0
+  path_provider: 1.6.1
 
 dev_dependencies:
   flutter_test:
