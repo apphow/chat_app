@@ -79,7 +79,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   } catch (e) {
                     print(e);
                   }
-                  ;
+
                   //Navigator.pushNamed(context, LoginScreen.id);
                 },
               )
