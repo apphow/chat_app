@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red.withOpacity(.2),
+      backgroundColor: Colors.red.withOpacity(.3),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
@@ -35,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 48.0,
               ),
               TextField(
+                textAlign: TextAlign.center,
                 onChanged: (value) {
                   //Do something with the user input.
                 },
@@ -45,9 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 8.0,
               ),
               TextField(
-                onChanged: (value) {
-                  //Do something with the user input.
-                },
+                obscureText: true,
+                textAlign: TextAlign.center,
                 decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Enter your password'),
               ),

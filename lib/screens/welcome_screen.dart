@@ -34,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
     //animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
     animation =
-        ColorTween(begin: Colors.orange[100], end: Colors.red.withOpacity(.2))
+        ColorTween(begin: Colors.orange[100], end: Colors.red.withOpacity(.3))
             .animate(controller);
     //our controller will animate ahead in 60 steps (ticks)(
     controller.forward();
@@ -57,15 +57,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
       backgroundColor: animation.value,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.red[300],
         title: Text(
-          'Family',
+          'Family Chat',
           style: TextStyle(
-            color: Colors.red[900],
+            color: Colors.white,
+            fontSize: 25,
           ),
         ),
       ),
@@ -79,15 +79,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               SizedBox(
                 height: 50.0,
               ),
-              Container(
-                height: 60,
-                child: Center(
-                  child: Text(
-                    '️Chatting',
-                    style: TextStyle(fontSize: 38.0, color: Colors.red[300]),
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 45.0,
               ),
@@ -95,8 +86,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 tag: 'harli',
                 child: Container(
                   child: Image.asset(
-                      'images/harli-marten-M9jrKDXOQoU-unsplash.jpg'),
-                  height: 300,
+                    'images/harli-marten-M9jrKDXOQoU-unsplash.jpg',
+                    height: 400,
+                  ),
                 ),
               ),
               SizedBox(
